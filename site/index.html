@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lukairo — Demo</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="container">
+        <h1 class="brand">Lukairo</h1>
+        <p class="tag">Demo site — CRM & workflows playground</p>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="hero">
+        <h2>Showcase</h2>
+        <p>Clean, fast static demo. Use this page for CRM/webhook testing and workflows.</p>
+      </section>
+
+      <section class="card">
+        <h3>Contact / Send to CRM</h3>
+
+        <!-- If your CRM accepts JSON webhooks, the JS below uses fetch() to POST JSON.
+             If you prefer a plain HTML form POST, set form[action] to the webhook URL and remove JS. -->
+        <form id="crmForm">
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" required>
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" required>
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="4"></textarea>
+          </label>
+
+          <div class="row">
+            <button id="sendBtn" type="submit">Send to CRM</button>
+            <button id="clearBtn" type="button" class="muted">Clear</button>
+          </div>
+
+          <div id="status" class="status" aria-live="polite"></div>
+        </form>
+
+        <p class="note">If your CRM requires authentication, we recommend creating a tiny relay (Worker or server) so you can keep secrets off the client. I can give that code next.</p>
+      </section>
+
+      <footer class="footer container">
+        <small>Demo • Remove when production-ready</small>
+      </footer>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
